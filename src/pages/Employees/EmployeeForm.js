@@ -1,6 +1,13 @@
 import React from 'react'
-import { TextField, Grid, RadioGroup, FormControlLabel, Radio, FormControl, FormLabel } from '@material-ui/core'
+import { TextField, Grid, FormControlLabel, Radio, FormControl, FormLabel } from '@material-ui/core'
+import { Controls } from "../../components/controls/Controls";
 import { useForm, Form } from '../../components/useForm'
+
+const genderItems = [
+  { id: 'male', title: 'Male' },
+  { id: 'female', title: 'Female' },
+  { id: 'other', title: 'Other' },
+]
 
 const initialFormValues = {
   id: 0,
@@ -26,15 +33,15 @@ export default function EmployeeForm() {
     <Form>
       <Grid container>
         <Grid item xs={6}>
-          <TextField
-            variant="outlined"
-            label="Full Name"
+
+          <Controls.Input
             name="fullName"
+            label="Full Name"
             value={values.fullName}
             onChange={handleInputChange}
           />
-          <TextField
-            variant="outlined"
+
+          <Controls.Input
             label="Email"
             name="email"
             value={values.email}
@@ -42,21 +49,19 @@ export default function EmployeeForm() {
           />
         </Grid>
         <Grid item xs={6}>
-          <FormControl>
-            <FormLabel>Gender</FormLabel>
-            <RadioGroup row
-              name="gender"
-              value={values.gender}
-              onChange={handleInputChange}
-            >
-              <FormControlLabel value="male" control={<Radio />} label="Male" />
-              <FormControlLabel value="female" control={<Radio />} label="Female" />
-              <FormControlLabel value="other" control={<Radio />} label="Other" />
-            </RadioGroup>
-          </FormControl>
+
+          <Controls.RadioGroup
+            name="gender"
+            label="Gender"
+            value={values.gender}
+            onChange={handleInputChange}
+            items={genderItems}
+          />
+
+
         </Grid>
 
       </Grid>
-    </Form>
+    </Form >
   )
 }
