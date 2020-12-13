@@ -3,6 +3,7 @@ import EmployeeForm from './EmployeeForm'
 import PageHeader from '../../components/PageHeader'
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
 import { makeStyles, Paper } from "@material-ui/core";
+import * as employeeService from "../../services/employeeService";
 
 const useStyles = makeStyles(theme => ({
   pageContent: {
