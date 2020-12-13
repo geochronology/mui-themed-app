@@ -42,7 +42,8 @@ export default function EmployeeForm() {
     setValues,
     errors,
     setErrors,
-    handleInputChange
+    handleInputChange,
+    resetForm
   } = useForm(initialFormValues)
 
   const handleSubmit = e => {
@@ -77,7 +78,6 @@ export default function EmployeeForm() {
             value={values.mobile}
             onChange={handleInputChange}
             error={errors.mobile}
-
           />
 
           <Controls.Input
@@ -128,6 +128,7 @@ export default function EmployeeForm() {
             <Controls.Button
               text="Reset"
               color="default"
+              onClick={resetForm}
             />
           </div>
 

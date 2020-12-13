@@ -14,12 +14,18 @@ export function useForm(initialFormValues) {
     })
   }
 
+  const resetForm = () => {
+    setValues(initialFormValues)
+    setErrors({})
+  }
+
   return {
     values,
     setValues,
     errors,
     setErrors,
-    handleInputChange
+    handleInputChange,
+    resetForm
   }
 }
 
