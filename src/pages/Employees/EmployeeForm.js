@@ -27,7 +27,7 @@ export default function EmployeeForm() {
   const validate = () => {
     let temp = {}
     temp.fullName = values.fullName ? "" : "This field is required."
-    temp.email = (/$|.+@.+../).test(values.email) ? "" : "Email is not valid."
+    temp.email = (/$^|.+@.+../).test(values.email) ? "" : "Email is not valid."
     temp.mobile = values.mobile.length > 9 ? "" : "Minimum 10 digits required"
     temp.departmentId = values.departmentId.length !== 0 ? "" : "This field is required"
     setErrors({
@@ -60,6 +60,7 @@ export default function EmployeeForm() {
             label="Full Name"
             value={values.fullName}
             onChange={handleInputChange}
+            error={errors.fullName}
           />
 
           <Controls.Input
@@ -67,6 +68,7 @@ export default function EmployeeForm() {
             name="email"
             value={values.email}
             onChange={handleInputChange}
+            error={errors.email}
           />
 
           <Controls.Input
@@ -74,6 +76,8 @@ export default function EmployeeForm() {
             name="mobile"
             value={values.mobile}
             onChange={handleInputChange}
+            error={errors.mobile}
+
           />
 
           <Controls.Input
@@ -99,6 +103,7 @@ export default function EmployeeForm() {
             value={values.departmentId}
             onChange={handleInputChange}
             options={employeeService.getDepartmentCollection()}
+            error={errors.departmentId}
           />
 
           <Controls.DatePicker
