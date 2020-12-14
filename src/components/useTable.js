@@ -1,4 +1,4 @@
-import { Table } from '@material-ui/core'
+import { Table, TableCell, TableHead, TableRow } from '@material-ui/core'
 import React from 'react'
 
 export default function useTable(records, headCells) {
@@ -9,7 +9,25 @@ export default function useTable(records, headCells) {
     </Table>
   )
 
+  const TableHeader = props => {
+
+    return (
+      <TableHead>
+        <TableRow>
+          {
+            headCells.map(headCell => (
+              <TableCell key={headCell.id}>
+                {headCell.label}
+              </TableCell>
+            ))
+          }
+        </TableRow>
+      </TableHead>
+    )
+  }
+
   return {
-    TableContainer
+    TableContainer,
+    TableHeader
   }
 }

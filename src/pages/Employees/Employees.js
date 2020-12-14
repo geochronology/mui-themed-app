@@ -13,14 +13,22 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+const headCells = [
+  { id: 'fullName', label: 'Employee Name' },
+  { id: 'email', label: 'Email Addr (personal)' },
+  { id: 'mobile', label: 'Mobile Number' },
+  { id: 'department', label: 'Department' }
+]
+
 export default function Employees() {
 
   const classes = useStyles()
   const [records, setRecords] = useState(employeeService.getAllEmployees())
 
   const {
-    TableContainer
-  } = useTable()
+    TableContainer,
+    TableHeader
+  } = useTable(records, headCells)
 
   return (
     <>
@@ -30,8 +38,10 @@ export default function Employees() {
         icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
-        <EmployeeForm />
+        {/* <EmployeeForm /> */}
+
         <TableContainer>
+          <TableHeader />
           <TableBody>
 
             {
