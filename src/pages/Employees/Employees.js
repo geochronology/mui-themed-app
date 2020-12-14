@@ -30,7 +30,7 @@ export default function Employees() {
         icon={<PeopleOutlineTwoToneIcon fontSize="large" />}
       />
       <Paper className={classes.pageContent}>
-        {/* <EmployeeForm /> */}
+        <EmployeeForm />
         <TableContainer>
           <TableBody>
 
@@ -40,6 +40,7 @@ export default function Employees() {
                   <TableCell>{item.fullName}</TableCell>
                   <TableCell>{item.email}</TableCell>
                   <TableCell>{item.mobile}</TableCell>
+                  <TableCell>{item.department}</TableCell>
                 </TableRow>
               ))
             }
