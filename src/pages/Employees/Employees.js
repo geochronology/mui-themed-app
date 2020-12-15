@@ -14,8 +14,8 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const headCells = [
-  { id: 'fullName', label: 'Employee Name' },
-  { id: 'email', label: 'Email Addr (personal)' },
+  { id: 'fullName', label: 'Full Name' },
+  { id: 'email', label: 'Email' },
   { id: 'mobile', label: 'Mobile Number' },
   { id: 'department', label: 'Department' }
 ]
