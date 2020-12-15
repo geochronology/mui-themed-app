@@ -28,7 +28,8 @@ export default function Employees() {
   const {
     TableContainer,
     TableHeader,
-    TablePaginationLol
+    TablePaginationLol,
+    recordsAfterPagingAndSorting
   } = useTable(records, headCells)
 
   return (
@@ -46,7 +47,7 @@ export default function Employees() {
           <TableBody>
 
             {
-              records.map(item => (
+              recordsAfterPagingAndSorting().map(item => (
                 <TableRow key={item.id}>
                   <TableCell>{item.fullName}</TableCell>
                   <TableCell>{item.email}</TableCell>
