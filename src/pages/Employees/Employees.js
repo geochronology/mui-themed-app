@@ -27,7 +27,8 @@ export default function Employees() {
 
   const {
     TableContainer,
-    TableHeader
+    TableHeader,
+    TablePaginationLol
   } = useTable(records, headCells)
 
   return (
@@ -57,6 +58,7 @@ export default function Employees() {
 
           </TableBody>
         </TableContainer>
+        <TablePaginationLol />
       </Paper>
     </>
   )
