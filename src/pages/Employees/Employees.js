@@ -17,7 +17,7 @@ const headCells = [
   { id: 'fullName', label: 'Full Name' },
   { id: 'email', label: 'Email' },
   { id: 'mobile', label: 'Mobile Number' },
-  { id: 'department', label: 'Department' }
+  { id: 'department', label: 'Department', disableSorting: true }
 ]
 
 export default function Employees() {
