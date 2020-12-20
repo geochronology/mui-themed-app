@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import EmployeeForm from './EmployeeForm'
 import PageHeader from '../../components/PageHeader'
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
-import { makeStyles, Paper, TableBody, TableCell, TableRow } from "@material-ui/core";
+import { makeStyles, Paper, TableBody, TableCell, TableRow, Toolbar } from "@material-ui/core";
 import useTable from "../../components/useTable";
 import * as employeeService from "../../services/employeeService";
+import { Controls } from "../../components/controls/Controls";
 
 const useStyles = makeStyles(theme => ({
   pageContent: {
@@ -41,6 +42,13 @@ export default function Employees() {
       />
       <Paper className={classes.pageContent}>
         {/* <EmployeeForm /> */}
+
+        <Toolbar>
+          <Controls.Input
+            label="Search Employees"
+
+          />
+        </Toolbar>
 
         <TableContainer>
           <TableHeader />
