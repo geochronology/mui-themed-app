@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import EmployeeForm from './EmployeeForm'
 import PageHeader from '../../components/PageHeader'
 import PeopleOutlineTwoToneIcon from '@material-ui/icons/PeopleOutlineTwoTone';
-import { makeStyles, Paper, TableBody, TableCell, TableRow, Toolbar } from "@material-ui/core";
+import { InputAdornment, makeStyles, Paper, TableBody, TableCell, TableRow, Toolbar } from "@material-ui/core";
 import useTable from "../../components/useTable";
 import * as employeeService from "../../services/employeeService";
 import { Controls } from "../../components/controls/Controls";
+import { Search } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   pageContent: {
@@ -46,6 +47,11 @@ export default function Employees() {
         <Toolbar>
           <Controls.Input
             label="Search Employees"
+            InputProps={{
+              startAdornment: (<InputAdornment position="start">
+                <Search />
+              </InputAdornment>)
+            }}
 
           />
         </Toolbar>

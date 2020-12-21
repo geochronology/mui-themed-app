@@ -13,6 +13,8 @@ export default function Input(props) {
         name={name}
         value={value}
         onChange={onChange}
+
+        {...other}
         {...(error && { error: true, helperText: error })}
       />
     </div>
