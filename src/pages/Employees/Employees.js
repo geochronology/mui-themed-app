@@ -29,13 +29,27 @@ export default function Employees() {
 
   const classes = useStyles()
   const [records, setRecords] = useState(employeeService.getAllEmployees())
+  const [filterFn, setFilterFn] = useState({ fn: items => { return items } })
 
   const {
     TableContainer,
     TableHeader,
     TablePaginationLol,
     recordsAfterPagingAndSorting
-  } = useTable(records, headCells)
+  } = useTable(records, headCells, filterFn)
+
+  const handleSearch = e => {
+    let target = e.target;
+    setFilterFn({
+      fn: items => {
+        if (target.value === "") {
+          return items
+        } else {
+          return items.filter(x => x.fullName.toLowerCase().includes(target.value))
+        }
+      }
+    })
+  }
 
   return (
     <>
@@ -55,6 +69,7 @@ export default function Employees() {
                 <Search />
               </InputAdornment>)
             }}
+            onChange={handleSearch}
           />
         </Toolbar>
 
