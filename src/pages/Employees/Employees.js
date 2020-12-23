@@ -12,6 +12,9 @@ const useStyles = makeStyles(theme => ({
   pageContent: {
     margin: theme.spacing(5),
     padding: theme.spacing(3)
+  },
+  searchInput: {
+    width: '75%'
   }
 }))
 
@@ -43,16 +46,15 @@ export default function Employees() {
       />
       <Paper className={classes.pageContent}>
         {/* <EmployeeForm /> */}
-
         <Toolbar>
           <Controls.Input
             label="Search Employees"
+            className={classes.searchInput}
             InputProps={{
               startAdornment: (<InputAdornment position="start">
                 <Search />
               </InputAdornment>)
             }}
-
           />
         </Toolbar>
 

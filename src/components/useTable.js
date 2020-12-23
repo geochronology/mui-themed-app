@@ -29,7 +29,6 @@ export default function useTable(records, headCells, filterFn) {
   const [order, setOrder] = useState()
   const [orderBy, setOrderBy] = useState()
 
-
   const TableContainer = (props) => (
     <Table className={classes.table}>
       {props.children}
@@ -52,8 +51,7 @@ export default function useTable(records, headCells, filterFn) {
               <TableCell key={headCell.id}
                 sortDirection={orderBy === headCell.id ? order : false}
               >
-                {headCell.disableSorting ?
-                  headCell.label :
+                {headCell.disableSorting ? headCell.label :
                   <TableSortLabel
                     active={orderBy === headCell.id}
                     direction={orderBy === headCell.id ? order : 'asc'}

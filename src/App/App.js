@@ -1,3 +1,4 @@
+import React from 'react';
 import { createMuiTheme, CssBaseline, makeStyles, ThemeProvider } from '@material-ui/core';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
@@ -41,7 +42,6 @@ const useStyles = makeStyles({
 })
 
 function App() {
-
   const classes = useStyles()
 
   return (

@@ -12,8 +12,8 @@ export function useForm(initialFormValues, validateOnChange = false, validate) {
       ...values,
       [name]: value
     })
-    if (validateOnChange) validate({ [name]: value })
-
+    if (validateOnChange)
+      validate({ [name]: value })
   }
 
   const resetForm = () => {
